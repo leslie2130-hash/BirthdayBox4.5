@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/reminderFragment"
+        android:name="com.example.bottomnavigationdemo.ReminderFragment"
+        android:label="reminder"
+        tools:layout="@layout/reminder_fragment" />
+    <fragment
+        android:id="@+id/contactFragment"
+        android:name="com.example.bottomnavigationdemo.ContactFragment"
+        android:label="contact"
+        tools:layout="@layout/contact_fragment" >
+        <action
+            android:id="@+id/action_contactFragment_to_createFriendFragment"
+            app:destination="@id/createFriendFragment" />
+        <action
+            android:id="@+id/action_contactFragment_to_friendDetailFragment"
+            app:destination="@id/friendDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/accoountFragment"
+        android:name="com.example.bottomnavigationdemo.AccountFragment"
+        android:label="accoount"
+        tools:layout="@layout/accoount_fragment" />
+    <fragment
+        android:id="@+id/createFriendFragment"
+        android:name="com.example.bottomnavigationdemo.friend.CreateFriendFragment"
+        android:label="fragment_create_friend"
+        tools:layout="@layout/fragment_create_friend" >
+        <action
+            android:id="@+id/action_createFriendFragment_to_contactFragment"
+            app:destination="@id/contactFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/friendDetailFragment"
+        android:name="com.example.bottomnavigationdemo.FriendDetailFragment"
+        android:label="fragment_friend_detail"
+        tools:layout="@layout/fragment_friend_detail" >
+        <action
+            android:id="@+id/action_friendDetailFragment_to_modifyFriendFragment"
+            app:destination="@id/modifyFriendFragment" />
+        <action
+            android:id="@+id/action_friendDetailFragment_to_reminderFragment"
+            app:destination="@id/reminderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/modifyFriendFragment"
+        android:name="com.example.bottomnavigationdemo.ModifyFriendFragment"
+        android:label="fragment_modify_friend"
+        tools:layout="@layout/fragment_modify_friend" >
+        <action
+            android:id="@+id/action_modifyFriendFragment_to_friendDetailFragment"
+            app:destination="@id/friendDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/boxFragment"
+        android:name="com.example.bottomnavigationdemo.BoxFragment"
+        android:label="fragment_box"
+        tools:layout="@layout/fragment_box" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.bottomnavigationdemo.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+</navigation>

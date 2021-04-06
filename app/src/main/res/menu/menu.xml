@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/reminderFragment"
+        android:icon="@drawable/ic_baseline_alarm_24"
+        android:title="reminder" />
+    <item
+        android:id="@+id/contactFragment"
+        android:icon="@drawable/ic_baseline_filter_2_24"
+        android:title="contact" />
+    <item
+        android:id="@+id/homeFragment"
+        android:title="home" />
+    <item
+        android:id="@+id/boxFragment"
+        android:title="box" />
+    <item
+        android:id="@+id/accoountFragment"
+        android:icon="@drawable/ic_baseline_account_box_24"
+        android:title="accoount" />
+</menu>
