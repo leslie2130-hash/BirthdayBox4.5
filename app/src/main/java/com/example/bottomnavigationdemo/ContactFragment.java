@@ -34,7 +34,7 @@ public class ContactFragment extends Fragment implements MyAdapter.IOnClickListe
 
         binding = ContactFragmentBinding.inflate(inflater, container, false);
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        model = new ViewModelProvider(this).get(FriendViewModel.class);
+        model = new ViewModelProvider(requireActivity()).get(FriendViewModel.class);
 
         adapter = new MyAdapter(model, this);
         binding.recyclerView.setAdapter(adapter);
@@ -86,8 +86,11 @@ public class ContactFragment extends Fragment implements MyAdapter.IOnClickListe
 
     @Override
     public void onClick(int position) {
+        Bundle bundle = new Bundle();
+        bundle.putInt("index", position);
+
         Log.i("test", "onClick: " + position);
         NavController navController = Navigation.findNavController(getView());
-        navController.navigate(R.id.action_contactFragment_to_friendDetailFragment);
+        navController.navigate(R.id.action_contactFragment_to_friendDetailFragment, bundle);
     }
 }

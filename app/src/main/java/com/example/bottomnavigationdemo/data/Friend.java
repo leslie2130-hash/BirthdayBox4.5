@@ -37,4 +37,14 @@ public class Friend {
     public String getObjectId() {
         return objectId;
     }
+
+    @Override
+    public String toString() {
+        return "Friend{" +
+                "name='" + name + '\'' +
+                ", hobby='" + hobby + '\'' +
+                ", birthday='" + birthday + '\'' +
+                ", objectId='" + objectId + '\'' +
+                '}';
+    }
 }
