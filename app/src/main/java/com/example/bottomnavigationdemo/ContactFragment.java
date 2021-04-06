@@ -39,21 +39,7 @@ public class ContactFragment extends Fragment implements MyAdapter.IOnClickListe
         adapter = new MyAdapter(model, this);
         binding.recyclerView.setAdapter(adapter);
 
-        binding.add.setOnClickListener(view -> {
-            if (TextUtils.isEmpty(binding.name.getText())
-                    || TextUtils.isEmpty(binding.hobby.getText())) {
-                Toast.makeText(getActivity(), "请输入姓名和爱好", Toast.LENGTH_SHORT).show();
-                return;
-            }
-            String name = binding.name.getText().toString();
-            String hobby = binding.hobby.getText().toString();
 
-            Contact contact = new Contact();
-            contact.setName(name);
-            contact.setHobby(hobby);
-
-            model.add(contact);
-        });
 
         model.getList().observe(getViewLifecycleOwner(), new Observer<List<Friend>>() {
             @Override

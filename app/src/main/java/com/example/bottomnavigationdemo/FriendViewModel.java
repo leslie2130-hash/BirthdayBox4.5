@@ -13,8 +13,8 @@ public class FriendViewModel extends ViewModel {
     public FriendViewModel() { repository = new FriendRepository();
     }
 
-    public void add(Contact contact) {
-        repository.add(contact);
+    public void add(Friend friend) {
+        repository.add(friend);
     }
 
     public void delete(int index) {

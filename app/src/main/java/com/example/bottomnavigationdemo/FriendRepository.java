@@ -15,8 +15,8 @@ public class FriendRepository {
         friendDataSource.getAll();
     }
 
-    public void add(Contact contact) {
-        //friendDataSource.add(contact);
+    public void add(Friend friend) {
+        friendDataSource.add(friend);
     }
 
     public void delete(int index) {

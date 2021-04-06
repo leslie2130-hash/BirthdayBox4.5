@@ -54,7 +54,8 @@ public class FriendDataSource {
 
             public void onNext(AVObject todo) {
                 // 成功保存之后，执行其他逻辑
-
+                List<Friend> list = listMutableLiveData.getValue();
+                list.add(toAVobject(todo));
                 //list.add(friends);
                 listMutableLiveData.postValue(list);
                 System.out.println("保存成功。objectId：" + todo.getObjectId());
