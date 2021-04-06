@@ -17,13 +17,14 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.example.bottomnavigationdemo.data.Friend;
 import com.example.bottomnavigationdemo.databinding.ContactFragmentBinding;
 
 import java.util.List;
 
 public class ContactFragment extends Fragment implements MyAdapter.IOnClickListener{
     private MyAdapter adapter;
-    private ContactViewModel model;
+    private FriendViewModel model;
 
     private ContactFragmentBinding binding;
 
@@ -33,7 +34,7 @@ public class ContactFragment extends Fragment implements MyAdapter.IOnClickListe
 
         binding = ContactFragmentBinding.inflate(inflater, container, false);
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        model = new ViewModelProvider(this).get(ContactViewModel.class);
+        model = new ViewModelProvider(this).get(FriendViewModel.class);
 
         adapter = new MyAdapter(model, this);
         binding.recyclerView.setAdapter(adapter);
@@ -54,9 +55,9 @@ public class ContactFragment extends Fragment implements MyAdapter.IOnClickListe
             model.add(contact);
         });
 
-        model.getList().observe(getViewLifecycleOwner(), new Observer<List<Contact>>() {
+        model.getList().observe(getViewLifecycleOwner(), new Observer<List<Friend>>() {
             @Override
-            public void onChanged(List<Contact> contact) {
+            public void onChanged(List<Friend> contact) {
                 adapter.notifyDataSetChanged();
             }
         });

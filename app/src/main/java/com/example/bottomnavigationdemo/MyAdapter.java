@@ -5,8 +5,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.view.menu.MenuView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.bottomnavigationdemo.data.Friend;
 import com.example.bottomnavigationdemo.databinding.CellBinding;
 
 
@@ -15,10 +16,10 @@ import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private CellBinding binding;
-    private ContactViewModel viewModel;
+    private FriendViewModel viewModel;
     private IOnClickListener listener;
 
-    public MyAdapter(ContactViewModel viewModel, IOnClickListener listener) {
+    public MyAdapter(FriendViewModel viewModel, IOnClickListener listener) {
         this.viewModel = viewModel;
         this.listener = listener;
     }
@@ -32,18 +33,18 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        List<Contact> list = viewModel.getList().getValue();
+        List<Friend> list = viewModel.getList().getValue();
         if (list.size() > 0) {
-            Contact contact = list.get(position);
-            binding.name.setText(contact.getName());
-            binding.hobby.setText(contact.getHobby());
+            Friend friend = list.get(position);
+            binding.name.setText(friend.getName());
+            binding.hobby.setText(friend.getHobby());
             binding.index.setText(String.valueOf(position + 1));
         }
     }
 
     @Override
     public int getItemCount() {
-        List<Contact> list = viewModel.getList().getValue();
+        List<Friend> list = viewModel.getList().getValue();
         return list.size();
     }
 

@@ -5,10 +5,12 @@ import java.util.List;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ContactViewModel extends ViewModel {
-    private ContactRepository repository;
+import com.example.bottomnavigationdemo.data.Friend;
 
-    public ContactViewModel() { repository = new ContactRepository();
+public class FriendViewModel extends ViewModel {
+    private FriendRepository repository;
+
+    public FriendViewModel() { repository = new FriendRepository();
     }
 
     public void add(Contact contact) {
@@ -23,7 +25,7 @@ public class ContactViewModel extends ViewModel {
         repository.modify(index, contact);
     }
 
-    public MutableLiveData<List<Contact>> getList() {
+    public MutableLiveData<List<Friend>> getList() {
         return repository.getList();
     }
 }
