@@ -1,5 +1,6 @@
 package com.example.bottomnavigationdemo;
 
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
@@ -19,7 +20,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import cn.leancloud.AVUser;
-import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -44,6 +44,15 @@ public class LogFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         mViewModel = new ViewModelProvider(this).get(UserViewModel.class);
         // TODO: Use the ViewModel
+        mViewModel.getResult().observe(getViewLifecycleOwner(), new Observer<Boolean>() {
+            @Override
+            public void onChanged(Boolean aBoolean) {
+                if (aBoolean) {
+                    Intent intent = new Intent(getActivity(),  MainActivity3tab.class);
+                    startActivity(intent);
+                }
+            }
+        });
 
         Button button = getView().findViewById(R.id.buttonRegister);
         button.setOnClickListener(new View.OnClickListener() {
@@ -70,8 +79,6 @@ public class LogFragment extends Fragment {
 
                                          mViewModel.login(name, password);
 
-                                         Intent intent = new Intent(getActivity(),  MainActivity3tab.class);
-                                         startActivity(intent);
                                      }
                                  }
 
