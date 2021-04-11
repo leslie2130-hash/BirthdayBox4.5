@@ -34,7 +34,7 @@
         app:menu="@menu/detail_menu" />
 
     <Button
-        android:id="@+id/snedgiftbutton"
+        android:id="@+id/sendgiftbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="192dp"

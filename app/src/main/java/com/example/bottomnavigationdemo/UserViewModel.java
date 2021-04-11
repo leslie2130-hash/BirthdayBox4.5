@@ -12,7 +12,7 @@ import cn.leancloud.AVUser;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 public class UserViewModel extends ViewModel {
-    private static final  String  TAG = "BottomNavigationDemo";
+    private static final  String  TAG = "BirthdayBox";
     private MutableLiveData<Boolean> result = new MutableLiveData<>();
 
     public UserViewModel() {

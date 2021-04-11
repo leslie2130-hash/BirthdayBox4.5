@@ -3,6 +3,9 @@ package com.example.bottomnavigationdemo.data;
 import android.util.Log;
 
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModelProvider;
+
+import com.example.bottomnavigationdemo.FriendViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,12 +28,14 @@ public class FriendDataSource {
 
     private MutableLiveData<List<Friend>> listMutableLiveData;
     private List<Friend> list;
+    private FriendViewModel model;
 
 
     public FriendDataSource() {
         listMutableLiveData = new MutableLiveData<List<Friend>>();
         list = new ArrayList<Friend>();
         listMutableLiveData.setValue(list);
+
     }
 
 
@@ -72,8 +77,9 @@ public class FriendDataSource {
 
     }
 
-    public void delete(){
-        AVObject todo = AVObject.createWithoutData("Friend", "6068175b7fa6c4403bc526ac");
+    public void delete(int index, Friend friend) {
+
+        AVObject todo = AVObject.createWithoutData("Friend", friend.getObjectId());
         todo.deleteInBackground().subscribe(new Observer<AVNull>() {
             @Override
             public void onSubscribe(@NonNull Disposable d) {
@@ -82,6 +88,9 @@ public class FriendDataSource {
 
             @Override
             public void onNext(@NonNull AVNull avNull) {
+                List<Friend> list = listMutableLiveData.getValue();
+                list.remove(index);
+                listMutableLiveData.postValue(list);
 
             }
 
@@ -99,10 +108,35 @@ public class FriendDataSource {
 
     }
 
-    public void modify(){
-        AVObject todo = AVObject.createWithoutData("Friend", "6068185a7fa6c4403bc528ae");
-        todo.put("hobby", "这周周会改到周三下午三点。");
+    public void modify(int index,Friend friend) {
+        AVObject todo = AVObject.createWithoutData("Friend", friend.getObjectId());
+        todo.put("name", friend.getName());
+        todo.put("hobby", friend.getHobby());
         todo.saveInBackground().subscribe(new Observer<AVObject>() {
+            @Override
+            public void onSubscribe(@NonNull Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(AVObject todo) {
+                List<Friend> list = listMutableLiveData.getValue();
+                list.set(index, toAVobject(todo));
+                listMutableLiveData.postValue(list);
+                // 成功保存之后，执行其他逻辑
+            }
+
+            @Override
+            public void onError(@NonNull Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
+        /*todo.fetchInBackground().subscribe(new Observer<AVObject>() {
             @Override
             public void onSubscribe(@NonNull Disposable d) {
 
@@ -122,11 +156,11 @@ public class FriendDataSource {
             public void onComplete() {
 
             }
-        });
+        });*/
 
     }
 
-    public void getAll(){
+    public void getAll() {
         AVQuery<AVObject> query = new AVQuery<>("Friend");
         query.whereEqualTo("userId", AVUser.getCurrentUser());
         query.findInBackground().subscribe(new Observer<List<AVObject>>() {
@@ -138,7 +172,7 @@ public class FriendDataSource {
             @Override
             public void onNext(@NonNull List<AVObject> avObjects) {
                 List<Friend> list = new ArrayList<>();
-                for (AVObject object: avObjects){
+                for (AVObject object : avObjects) {
                     list.add(toAVobject(object));
 
                 }
@@ -159,10 +193,13 @@ public class FriendDataSource {
     }
 
     public MutableLiveData<List<Friend>> getListMutableLiveData() {
+
+
+
         return listMutableLiveData;
     }
 
-    private Friend toAVobject(AVObject avObject){
+    private Friend toAVobject(AVObject avObject) {
         Friend friend = new Friend();
         friend.setName((String) avObject.get(NAME));
         friend.setHobby((String) avObject.get(HOBBY));
@@ -172,4 +209,3 @@ public class FriendDataSource {
         return friend;
     }
 }
-

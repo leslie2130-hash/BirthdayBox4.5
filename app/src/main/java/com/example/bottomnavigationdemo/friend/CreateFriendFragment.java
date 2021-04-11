@@ -14,9 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.bottomnavigationdemo.Contact;
 import com.example.bottomnavigationdemo.FriendViewModel;
-import com.example.bottomnavigationdemo.R;
 import com.example.bottomnavigationdemo.data.Friend;
 import com.example.bottomnavigationdemo.databinding.FragmentCreateFriendBinding;
 
@@ -56,7 +54,7 @@ public class CreateFriendFragment extends Fragment {
                 friend.setName(name);
                 friend.setHobby(hobby);
 
-                model.add(friend);
+                model.add(friend);//
 
 
                 Log.i("Test", "onClick: ");

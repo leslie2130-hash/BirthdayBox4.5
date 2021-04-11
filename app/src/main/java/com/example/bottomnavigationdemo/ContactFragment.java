@@ -39,11 +39,9 @@ public class ContactFragment extends Fragment implements MyAdapter.IOnClickListe
         adapter = new MyAdapter(model, this);
         binding.recyclerView.setAdapter(adapter);
 
-
-
         model.getList().observe(getViewLifecycleOwner(), new Observer<List<Friend>>() {
             @Override
-            public void onChanged(List<Friend> contact) {
+            public void onChanged(List<Friend> friend) {
                 adapter.notifyDataSetChanged();
             }
         });
@@ -55,7 +53,6 @@ public class ContactFragment extends Fragment implements MyAdapter.IOnClickListe
                     case R.id.add:
                         NavController controller = Navigation.findNavController(getView());
                         controller.navigate(R.id.action_contactFragment_to_createFriendFragment);
-
                         break;
                     default:
                         break;

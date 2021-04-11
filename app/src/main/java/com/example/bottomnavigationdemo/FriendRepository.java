@@ -19,12 +19,13 @@ public class FriendRepository {
         friendDataSource.add(friend);
     }
 
-    public void delete(int index) {
-      //  friendDataSource.delete(index);
+    public void delete(int index, Friend friend) {
+        friendDataSource.delete(index,friend);
     }
 
-    public void modify(int index, Contact contact) {
-        //friendDataSource.modify(index, contact);
+    public void modify(int index, Friend friend) {
+
+        friendDataSource.modify(index, friend);
     }
 
     public MutableLiveData<List<Friend>> getList() {
