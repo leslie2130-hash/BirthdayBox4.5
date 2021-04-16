@@ -58,7 +58,7 @@ public class LogFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NavController navController  = Navigation.findNavController(v);
+                NavController navController = Navigation.findNavController(v);
                 navController.navigate(R.id.action_logFragment_to_register_Fragment);
 
             }

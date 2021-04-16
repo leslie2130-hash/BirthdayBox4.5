@@ -55,10 +55,6 @@ public class RegisterFragment extends Fragment {
                 Log.i(TAG, "onClick: " + name);
                 Log.i(TAG, "onClick: " + password);
                 mViewModel.register(name, password);
-
-                //NavController navController  = Navigation.findNavController(v);
-                //navController.navigate(R.id.action_register_Fragment_to_logFragment);
-
             }
         });
 

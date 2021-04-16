@@ -75,6 +75,13 @@ public class UserViewModel extends ViewModel {
             public void onComplete() {}
         });
     }
+
+    public void logout(){
+        AVUser.logOut();
+
+        AVUser currentUser = AVUser.getCurrentUser();
+
+    }
     public MutableLiveData<Boolean> getResult() {
 
         return result;
