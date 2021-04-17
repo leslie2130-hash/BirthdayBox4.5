@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         //StatusBarUtil.setColor(this, getColor(R.color.toolbar_background_color), 0);
         StatusBarUtil.setColor(this, getColor(R.color.toolbar_background_color), 0);
-
+        StatusBarUtil.setTranslucentForImageViewInFragment(this, 0, null);
 
     }
 
