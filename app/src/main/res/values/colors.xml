@@ -9,5 +9,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="toolbar_background_color">#FFF2F2F2</color>
     <color name="colorRoseRed">#F9375F</color>
+    <color name="blue">#2196F3</color>
+    <color name="greyRoseRed">#BEF37588</color>
+    <color name="grey">#A6201E1E</color>
+
 
 </resources>

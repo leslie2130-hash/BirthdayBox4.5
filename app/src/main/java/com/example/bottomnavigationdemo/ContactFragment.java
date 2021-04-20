@@ -1,13 +1,11 @@
 package com.example.bottomnavigationdemo;
 
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
@@ -22,8 +20,8 @@ import com.example.bottomnavigationdemo.databinding.ContactFragmentBinding;
 
 import java.util.List;
 
-public class ContactFragment extends Fragment implements MyAdapter.IOnClickListener{
-    private MyAdapter adapter;
+public class ContactFragment extends Fragment implements ContactAdapter.IOnClickListener{
+    private ContactAdapter adapter;
     private FriendViewModel model;
 
     private ContactFragmentBinding binding;
@@ -36,7 +34,7 @@ public class ContactFragment extends Fragment implements MyAdapter.IOnClickListe
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         model = new ViewModelProvider(requireActivity()).get(FriendViewModel.class);
 
-        adapter = new MyAdapter(model, this);
+        adapter = new ContactAdapter(model, this);
         binding.recyclerView.setAdapter(adapter);
 
         model.getList().observe(getViewLifecycleOwner(), new Observer<List<Friend>>() {

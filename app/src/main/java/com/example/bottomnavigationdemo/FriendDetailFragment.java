@@ -8,7 +8,6 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,7 +16,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.bottomnavigationdemo.data.Friend;
-import com.example.bottomnavigationdemo.databinding.FragmentCreateFriendBinding;
 import com.example.bottomnavigationdemo.databinding.FragmentFriendDetailBinding;
 
 import java.util.List;
@@ -27,7 +25,7 @@ public class FriendDetailFragment extends Fragment {
 
     private FragmentFriendDetailBinding binding;
     private int index;
-    private MyAdapter adapter;
+    private ContactAdapter adapter;
     private FriendViewModel model;
 
     public FriendDetailFragment() {

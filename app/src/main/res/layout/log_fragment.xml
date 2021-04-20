@@ -28,21 +28,26 @@
         android:layout_marginRight="16dp"
         android:background="@drawable/round_background"
         android:text="Register"
-
-        app:backgroundTint="@color/colorRoseRed"
+        android:textColor="@color/white"
+        android:textColorHighlight="#FFFFFF"
+        android:textSize="18sp"
+        app:backgroundTint="@color/greyRoseRed"
         app:cornerRadius="@dimen/fab_margin"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.67" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
+        app:layout_constraintVertical_bias="0.769" />
 
     <Button
         android:id="@+id/buttonLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/round_background"
+        android:checkable="false"
         android:text="log in"
+        android:textSize="18sp"
         app:backgroundTint="@color/colorRoseRed"
         app:cornerRadius="@dimen/fab_margin"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -50,7 +55,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/buttonRegister"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.793" />
+        app:layout_constraintVertical_bias="0.825" />
 
     <EditText
         android:id="@+id/editTextTextPersonName"
@@ -63,12 +68,10 @@
         android:ems="10"
         android:hint="User Name"
         android:inputType="textPersonName"
-        android:textColor="#FFFFFF"
         android:textCursorDrawable="@drawable/edittext_shape"
         android:theme="@style/MyEditText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -84,9 +87,9 @@
         android:layout_marginRight="16dp"
         android:ems="10"
         android:hint="Password"
-        android:theme="@style/MyEditText"
         android:inputType="textPassword"
         android:textCursorDrawable="@drawable/edittext_shape"
+        android:theme="@style/MyEditText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

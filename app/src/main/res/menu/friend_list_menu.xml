@@ -6,6 +6,7 @@
         android:id="@+id/add"
         android:checked="false"
         android:enabled="true"
+        android:icon="@drawable/ic_baseline_add_circle_outline_24"
         android:title="add"
-        app:showAsAction="withText" />
+        app:showAsAction="always" />
 </menu>

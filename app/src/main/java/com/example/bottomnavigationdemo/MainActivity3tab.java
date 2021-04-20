@@ -19,7 +19,7 @@ public class MainActivity3tab extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        StatusBarUtil.setColor(this, getColor(R.color.toolbar_background_color), 0);
+        StatusBarUtil.setColor(this, getColor(R.color.colorRoseRed), 0);
         setContentView(R.layout.activity_main3tab);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
