@@ -136,27 +136,6 @@ public class FriendDataSource {
 
             }
         });
-        /*todo.fetchInBackground().subscribe(new Observer<AVObject>() {
-            @Override
-            public void onSubscribe(@NonNull Disposable d) {
-
-            }
-
-            @Override
-            public void onNext(@NonNull AVObject avObject) {
-
-            }
-
-            @Override
-            public void onError(@NonNull Throwable e) {
-
-            }
-
-            @Override
-            public void onComplete() {
-
-            }
-        });*/
 
     }
 
@@ -193,8 +172,6 @@ public class FriendDataSource {
     }
 
     public MutableLiveData<List<Friend>> getListMutableLiveData() {
-
-
 
         return listMutableLiveData;
     }

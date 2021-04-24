@@ -24,6 +24,7 @@ public class ReminderFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.reminder_fragment, container, false);
+
     }
 
     @Override

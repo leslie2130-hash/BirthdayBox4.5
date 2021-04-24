@@ -39,6 +39,10 @@ public class HomeFragment extends Fragment {
         binding.banner2.addBannerLifecycleObserver(this)
                 .setAdapter(new ImageAdapter(DataBean.getTestData()))
                 .setIndicator(new CircleIndicator(getContext()));
+        /* 一行显示两个卡片
+        binding.recyclerView.setLayoutManager(
+                new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false));
+         */
 
 
         return binding.getRoot();
