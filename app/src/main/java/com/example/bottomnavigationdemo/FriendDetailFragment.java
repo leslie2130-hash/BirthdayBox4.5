@@ -1,6 +1,11 @@
 package com.example.bottomnavigationdemo;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
@@ -8,12 +13,6 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.example.bottomnavigationdemo.data.Friend;
 import com.example.bottomnavigationdemo.databinding.FragmentFriendDetailBinding;
@@ -50,15 +49,19 @@ public class FriendDetailFragment extends Fragment {
         Friend friend = list.get(index); //"那一条" friend
         //Log.i("TAG", "friend = model.getList().getValue().get(index);");
 
-        binding.textView.setText(friend.toString());
+        //binding.textViewName.setText(friend.getName());
+       // binding.textViewHobby.setText(friend.getHobby());
+       // binding.textViewBirthday.setText(friend.getBirthday());
+
 
         model.getList().observe(getViewLifecycleOwner(), new Observer<List<Friend>>() {
             @Override
             public void onChanged(List<Friend> friend) {
 
-                Log.i("test", "aaa" );
                 Friend friend2 = model.getList().getValue().get(index);
-                binding.textView.setText(friend2.toString());
+                binding.textViewName.setText("Name: " + friend2.getName());
+                binding.textViewHobby.setText("Hobby: " + friend2.getHobby());
+                binding.textViewBirthday.setText("Birthday: " + friend2.getBirthday());
             }
         });
 

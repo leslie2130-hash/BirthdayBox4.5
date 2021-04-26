@@ -2,17 +2,15 @@ package com.example.bottomnavigationdemo.data;
 
 import androidx.lifecycle.MutableLiveData;
 
-import com.example.bottomnavigationdemo.Gift;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class FakeDataSource {
+public class GiftDataSource {
     private MutableLiveData<List<Gift>> listMutableLiveData;
     private List<Gift> list;
     private Gift gift;
 
-    public FakeDataSource() {
+    public GiftDataSource() {
         listMutableLiveData = new MutableLiveData<>();
         list = new ArrayList<>();
 

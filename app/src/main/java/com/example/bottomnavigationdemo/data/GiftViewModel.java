@@ -3,8 +3,6 @@ package com.example.bottomnavigationdemo.data;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.bottomnavigationdemo.Gift;
-
 import java.util.List;
 
 public class GiftViewModel extends ViewModel {

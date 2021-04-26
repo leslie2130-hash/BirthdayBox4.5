@@ -49,10 +49,13 @@ public class CreateFriendFragment extends Fragment {
                 }
                 String name = binding.createName.getText().toString();
                 String hobby = binding.createHobby.getText().toString();
+                String birthday = binding.createBirthday.getText().toString();
 
                 Friend friend = new Friend();
                 friend.setName(name);
                 friend.setHobby(hobby);
+                friend.setBirthday(birthday);
+
 
                 model.add(friend);//
 

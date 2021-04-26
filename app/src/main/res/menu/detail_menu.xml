@@ -3,10 +3,10 @@
 
     <item
         android:id="@+id/modify"
-        android:icon="@drawable/ic_baseline_modify_24"
+        android:icon="@drawable/modify"
         android:title="modify" />
     <item
         android:id="@+id/delete"
-        android:icon="@drawable/ic_baseline_delete_24"
+        android:icon="@drawable/delete"
         android:title="delete" />
 </menu>

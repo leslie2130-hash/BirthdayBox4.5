@@ -1,4 +1,4 @@
-package com.example.bottomnavigationdemo;
+package com.example.bottomnavigationdemo.data;
 
 public class Gift {
     private String name;

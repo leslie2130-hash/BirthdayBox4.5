@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/reminderFragment"
-        android:icon="@drawable/ic_baseline_alarm_24"
+        android:icon="@drawable/reminder"
         android:title="reminder" />
     <item
         android:id="@+id/contactFragment"
@@ -11,14 +11,14 @@
         android:title="contact" />
     <item
         android:id="@+id/homeFragment"
-        android:icon="@drawable/ic_baseline_home_24"
+        android:icon="@drawable/home"
         android:title="home" />
     <item
         android:id="@+id/boxFragment"
-        android:icon="@drawable/ic_baseline_cake_24"
+        android:icon="@drawable/giftbag"
         android:title="box" />
     <item
         android:id="@+id/accoountFragment"
-        android:icon="@drawable/ic_baseline_account_box_24"
+        android:icon="@drawable/setting"
         android:title="accoount" />
 </menu>

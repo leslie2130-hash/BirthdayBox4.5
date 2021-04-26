@@ -7,13 +7,23 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class ReminderFragment extends Fragment {
+import com.example.bottomnavigationdemo.data.GiftAdapter;
+import com.example.bottomnavigationdemo.data.GiftViewModel;
+import com.example.bottomnavigationdemo.data.Reminder;
+import com.example.bottomnavigationdemo.data.ReminderAdapter;
+import com.example.bottomnavigationdemo.databinding.FragmentBoxBinding;
+import com.example.bottomnavigationdemo.databinding.ReminderCellBinding;
+import com.example.bottomnavigationdemo.databinding.ReminderFragmentBinding;
 
+public class ReminderFragment extends Fragment {
+    private ReminderFragmentBinding binding;
+    private ReminderAdapter adapter;
     private ReminderViewModel mViewModel;
 
     public static ReminderFragment newInstance() {
@@ -23,15 +33,20 @@ public class ReminderFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.reminder_fragment, container, false);
+        binding = ReminderFragmentBinding.inflate(inflater, container, false);
 
+        adapter = new ReminderAdapter();
+        binding.recyclerView.setAdapter(adapter);
+        binding.recyclerView.setHasFixedSize(true);
+        binding.recyclerView.setLayoutManager(
+                new GridLayoutManager(getContext(), 1, GridLayoutManager.VERTICAL, false));
+
+        return binding.getRoot();
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(ReminderViewModel.class);
-        // TODO: Use the ViewModel
     }
 
 }
